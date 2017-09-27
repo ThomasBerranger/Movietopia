@@ -1,0 +1,22 @@
+<h1>Rechercher un film</h1>
+<input type="text" (keyup)="search($event)" placeholder="Entrer un nom" class="form-control input">
+
+<hr />
+
+<ul>
+  <li *ngFor="let movie of movies">
+    <h4>{{movie.title}}
+      <span><button (click)="onSelect(movie)" role="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button></span>
+    </h4>
+    <hr/>
+  </li>
+</ul>
+
+
+<div *ngIf="movies?.length < 1">
+  <h4>Aucun résultat ...</h4>
+</div>
+
+<div *ngIf="movie">
+  <app-movie-details [movie]='movie'></app-movie-details>
+</div>

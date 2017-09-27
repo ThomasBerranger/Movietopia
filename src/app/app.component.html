@@ -1,0 +1,17 @@
+<md-toolbar class="toolbar mat-elevation-z4 fixed-top" color="primary">
+  <a routerLink="home" routerLinkActive="active" class="toolbar-title-link" role="button"><i class="fa fa-home" aria-hidden="true"></i> {{title}} </a>
+  <a routerLink="ajouter-film" routerLinkActive="active" class="toolbar-link" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter </a>
+  <a routerLink="rechercher-film" routerLinkActive="active" class="toolbar-link" role="button"><i class="fa fa-search" aria-hidden="true"></i> Rechercher </a>
+  <span class="toolbar-space"></span>
+  <a routerLink="login" routerLinkActive="active" role="button" class="icon-right"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+</md-toolbar>
+
+<br><br><br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

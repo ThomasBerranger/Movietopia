@@ -1,0 +1,30 @@
+<div *ngIf="movie">
+
+  <md-card class="example-card">
+    <md-card-header>
+      <div md-card-avatar class="example-header-image"></div>
+      <md-card-title><h2>{{movie.title}}</h2></md-card-title>
+      <md-card-subtitle><h3>{{movie.date | date: 'dd/MM/yyyy'}}</h3></md-card-subtitle>
+    </md-card-header>
+
+    <div style="text-align: center">
+      <img src="../../../assets/{{movie.image}}" alt="{{movie.image}}" style="width: 70%;">
+    </div>
+
+    <md-card-content>
+      <br>
+      <h5>
+        {{movie.synopsis}}
+      </h5>
+      <h5>
+        {{movie.note}} / 5
+      </h5>
+      <h5>
+        Disponible en vente : {{movie.avaible}}
+      </h5>
+    </md-card-content>
+    <md-card-actions> </md-card-actions>
+  </md-card>
+
+</div>
+

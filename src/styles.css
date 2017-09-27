@@ -1,0 +1,17 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+body {
+    background-color: whitesmoke;
+}

@@ -1,0 +1,4 @@
+<div *ngIf="!authService.isUserAnonymousLoggedIn" class="text-centered">
+  <button role="button" class="btn btn-success" (click)="signInAnonymously()"><i class="fa fa-sign-in" aria-hidden="true"></i> Se connecter en tant qu'anonyme</button>
+</div>
+<user-info></user-info>

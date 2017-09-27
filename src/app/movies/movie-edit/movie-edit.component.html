@@ -1,0 +1,62 @@
+<div *ngIf="movie">
+
+  <md-card class="example-card">
+    <md-card-header> </md-card-header>
+
+    <md-card-content>
+
+    <div class="row text-centered">
+      <div class="col-md-12">
+        <label for="title" >Titre</label>
+        <input type="text" [value]="movie.title" #updateMovieName>
+        <button class="btn btn-success" (click)="updateTitle(movie.$key, updateMovieName.value)">Modifier</button>
+      </div>
+
+      <br><br><br>
+
+      <div class="col-md-12">
+        <label for="date" >Date de sortie</label>
+        <input type="date" [value]="movie.date" #updateMovieDate>
+        <button class="btn btn-success" (click)="updateDate(movie.$key, updateMovieDate.value)">Modifier</button>
+      </div>
+
+      <br><br><br>
+
+      <div class="col-md-12">
+        <label for="image" >Nom de l'image</label>
+        <input type="text" [value]="movie.image" #updateMovieImage>
+        <button class="btn btn-success" (click)="updateImage(movie.$key, updateMovieImage.value)">Modifier</button>
+      </div>
+
+      <br><br><br>
+
+      <div class="col-md-12">
+        <label for="synopsis" >Synopsis</label>
+        <input type="text" [value]="movie.synopsis" #updateMovieSynopsis>
+        <button class="btn btn-success" (click)="updateSynopsis(movie.$key, updateMovieSynopsis.value)">Modifier</button>
+      </div>
+
+      <br><br><br>
+
+      <div class="col-md-12">
+        <label for="note" >Note</label>
+        <input type="number" [value]="movie.note" #updateMovieNote>
+        <button class="btn btn-success" (click)="updateNote(movie.$key, updateMovieNote.value)">Modifier</button>
+      </div>
+
+      <br><br><br>
+
+      <div class="col-md-12">
+        <button class="btn btn-primary" role="button" *ngIf='movie.avaible' (click)='updateAvaible(false)'>Dispobile en magasin</button>
+        <button class="btn btn-primary" role="button" *ngIf='!movie.avaible' (click)='updateAvaible(true)'>Seulement en cinéma</button>
+      </div>
+    </div>
+
+    </md-card-content>
+    <md-card-actions class="text-centered">
+      <button *ngIf="authService.isUserAnonymousLoggedIn" role="button" class="btn btn-danger" (click)='deleteMovie()'><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+    </md-card-actions>
+  </md-card>
+
+</div>
+

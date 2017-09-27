@@ -1,0 +1,42 @@
+<h1 class="text-centered">Ajouter un film</h1>
+<div [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()">
+
+
+    <div class="form-group">
+      <label for="title">Titre du film</label>
+      <input class="form-control" type="text" id="title" required [(ngModel)]="movie.title" name="title">
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date de sortie</label>
+      <input class="form-control" type="date" id="date" required [(ngModel)]="movie.date" name="date">
+    </div>
+
+    <div class="form-group">
+      <label for="note" >Note presse/spéctateurs</label>
+      <input class="form-control" type="number" id="note" required [(ngModel)]="movie.note" name="note">
+    </div>
+
+    <div class="form-group">
+      <label for="synopsis" >Synopsis</label>
+      <input class="form-control" type="text" id="synopsis" required [(ngModel)]="movie.synopsis" name="synopsis">
+    </div>
+
+    <div class="form-group">
+      <label for="image" >Nom d'image</label>
+      <input placeholder="exemple.jpg" class="form-control" type="text" id="image" required [(ngModel)]="movie.image" name="image">
+    </div>
+
+    <div class="text-centered">
+      <button type="submit" class="btn btn-success btn-lg">Ajouter</button>
+    </div>
+
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Film ajouté !</h4>
+  <button class="btn btn-success" (click)="newMovie()"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter un autre film à votre collection</button>
+</div>

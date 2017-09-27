@@ -1,0 +1,25 @@
+.icon-right {
+    padding: 0 14px;
+    color: white;
+}
+
+.toolbar-title-link {
+    margin-left: 1%;
+    color: white;
+    text-decoration: none;
+}
+
+.toolbar-link {
+    margin-left: 3%;
+    color: white;
+    text-decoration: none;
+}
+
+.toolbar-space {
+    flex: 1 1 auto;
+}
+
+.toolbar {
+    margin: 0 auto 0 auto;
+    width: 60%;
+}

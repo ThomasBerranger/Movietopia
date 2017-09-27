@@ -1,0 +1,25 @@
+<h1 class="text-centered">Films :</h1>
+
+<br>
+
+<div *ngIf="!movie" class="row">
+  <div *ngFor="let movie of movies | async" class="col-md-6">
+    <app-movie-details [movie]='movie'></app-movie-details>
+    <button *ngIf="authService.isUserAnonymousLoggedIn" md-raised-button color="warn" (click)="onEdit(movie)" class="pull-right" style="top: -35px;" ><i class="fa fa-edit" aria-hidden="true"></i> Modifier</button>
+  </div>
+</div>
+
+<div *ngIf="authService.isUserAnonymousLoggedIn && movie">
+  <app-movie-edit [movie]='movie'></app-movie-edit>
+  <button *ngIf="!movie" md-raised-button color="warn" (click)="onBackToHome(movie)" ><i class="fa fa-edit" aria-hidden="true"></i> Modifier</button>
+</div>
+
+<div *ngIf="authService.isUserAnonymousLoggedIn" class="row">
+  <div class="col-md-12 text-centered">
+    <br>
+    <button *ngIf="movie" md-raised-button color="warn" (click)='onBackToHome(movie)'><i class="fa fa-edit" aria-hidden="true"></i> Retour à la liste</button>
+    <button *ngIf="!movie" type="button" class="btn btn-danger pull-right" (click)='deleteAllMovies()'><i class="fa fa-trash-o" aria-hidden="true"></i> Tout supprimer</button>
+  </div>
+</div>
+
+<br><br><br>
